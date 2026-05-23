@@ -1,3 +1,11 @@
+import os
+import sys
+
+# Tell Vercel's python engine to look inside the current directory for the 'app' module
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.models.database import engine
